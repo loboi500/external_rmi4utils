@@ -1,4 +1,3 @@
-APP_BUILD_SCRIPT := $(call my-dir)/Android.mk
-APP_STL := stlport_static
-APP_PLATFORM := android-21
-APP_ABI := armeabi armeabi-v7a arm64-v8a
+version https://git-lfs.github.com/spec/v1
+oid sha256:6a6dd4f5e1cf477951d69c5b63770b9656db3fc5b0667e293ef4f3c21a82e4e2
+size 139

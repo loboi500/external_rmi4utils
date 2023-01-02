@@ -1,22 +1,3 @@
-CXX ?= g++
-AR ?= ar
-RANLIB ?= ranlib
-CPPFLAGS += -I../include -I./include
-CXXFLAGS += -fPIC -Wall
-RMIDEVICESRC = rmifunction.cpp rmidevice.cpp hiddevice.cpp
-RMIDEVICEOBJ = $(RMIDEVICESRC:.cpp=.o)
-LIBNAME = librmidevice.so
-STATIC_LIBNAME = librmidevice.a
-LDFLAGS = -shared -Wl,-soname,$(LIBNAME)
-
-all: $(LIBNAME) $(STATIC_LIBNAME)
-
-$(LIBNAME): $(RMIDEVICEOBJ)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
-
-$(STATIC_LIBNAME): $(RMIDEVICEOBJ)
-	$(AR) crv $(STATIC_LIBNAME) $^
-	$(RANLIB) $(STATIC_LIBNAME)
-
-clean:
-	rm -f $(RMIDEVICEOBJ) $(LIBNAME)* $(STATIC_LIBNAME)*
+version https://git-lfs.github.com/spec/v1
+oid sha256:7028f85331bf7821220b16a1c296e185b927cf25b2a62a196df81af127afeb6d
+size 558

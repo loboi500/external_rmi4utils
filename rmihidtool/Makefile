@@ -1,22 +1,3 @@
-CXX ?= g++
-CPPFLAGS += -I../include -I./include -I../rmidevice
-CXXFLAGS += -Wall
-LDFLAGS += -L.
-LIBS =  -lrmidevice
-LIBDIR = ../rmidevice
-LIBNAME = librmidevice.a
-RMIHIDTOOLSRC = main.cpp
-RMIHIDTOOLOBJ = $(RMIHIDTOOLSRC:.cpp=.o)
-PROGNAME = rmihidtool
-STATIC_BUILD ?= y
-ifeq ($(STATIC_BUILD),y)
-LDFLAGS += -static
-endif
-
-all: $(PROGNAME)
-
-$(PROGNAME): $(RMIHIDTOOLOBJ)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(RMIHIDTOOLOBJ) -L$(LIBDIR) $(LIBS) -o $(PROGNAME)
-
-clean:
-	rm -f $(RMIHIDTOOLOBJ) $(PROGNAME)
+version https://git-lfs.github.com/spec/v1
+oid sha256:e9351e7e88bce47f82daf8aad3a7e1c6c2eb956ee5ebc044891b10db5176b9c6
+size 495

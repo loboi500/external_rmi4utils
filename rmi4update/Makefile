@@ -1,22 +1,3 @@
-CXX ?= g++
-CPPFLAGS += -I../include -I./include -I../rmidevice
-CXXFLAGS += -Wall
-LDFLAGS += -L.
-LIBS =  -lrmidevice -lrt
-LIBDIR = ../rmidevice
-LIBNAME = librmidevice.a
-RMI4UPDATESRC = main.cpp firmware_image.cpp rmi4update.cpp updateutil.cpp
-RMI4UPDATEOBJ = $(RMI4UPDATESRC:.cpp=.o)
-PROGNAME = rmi4update
-STATIC_BUILD ?= y
-ifeq ($(STATIC_BUILD),y)
-LDFLAGS += -static
-endif
-
-all: $(PROGNAME)
-
-$(PROGNAME): $(RMI4UPDATEOBJ)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(RMI4UPDATEOBJ) -L$(LIBDIR) $(LIBS) -o $(PROGNAME)
-
-clean:
-	rm -f $(RMI4UPDATEOBJ) $(PROGNAME)
+version https://git-lfs.github.com/spec/v1
+oid sha256:48fb2e92eb1a21b28a674317b4fbcc9bdbb53f8291ab27118ce6d39beee9457b
+size 549

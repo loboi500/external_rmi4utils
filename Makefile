@@ -1,20 +1,3 @@
-NDK_PROJECT_PATH=$(PWD)
-export NDK_PROJECT_PATH
-
-all:
-	$(MAKE) -C rmidevice all
-	$(MAKE) -C rmi4update all
-	$(MAKE) -C rmihidtool all
-	$(MAKE) -C f54test all
-
-clean:
-	$(MAKE) -C rmidevice clean
-	$(MAKE) -C rmi4update clean
-	$(MAKE) -C rmihidtool clean
-	$(MAKE) -C f54test clean
-
-android:
-	ndk-build NDK_APPLICATION_MK=Application.mk
-
-android-clean:
-	ndk-build NDK_APPLICATION_MK=Application.mk clean
+version https://git-lfs.github.com/spec/v1
+oid sha256:9f71c46f9f8cab16d41c08439318410fce63eca1f0df2ffce644c3d7b985cc97
+size 400
